@@ -35,14 +35,16 @@ CREATE TABLE salaries (
 	FOREIGN KEY (emp_no) REFERENCES employees (emp_no)
 );
 
+
 CREATE TABLE title (
 	emp_no		INT NOT NULL,
 	title		VARCHAR(40) NOT NULL,
 	from_date	DATE NOT NULL,
 	to_date		DATE NOT NULL,
-	PRIMARY KEY (emp_no),
+	PRIMARY KEY (emp_no, title, from_date),
 	FOREIGN KEY (emp_no) REFERENCES employees (emp_no)
 );
+
 
 CREATE TABLE dept_emp (
 	emp_no		INT NOT NULL,
